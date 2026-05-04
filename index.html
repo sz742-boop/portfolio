@@ -67,6 +67,10 @@
 
     .hero-right { animation:fadeUp 0.7s 0.2s ease both; }
     .hero-card { background:var(--navy); border-radius:4px; padding:48px 44px; color:#fff; position:relative; overflow:hidden; }
+    .profile-photo-wrap { position:relative; z-index:1; width:180px; height:180px; margin:0 auto 30px; border-radius:50%; padding:5px; background:linear-gradient(135deg,var(--gold-l),rgba(255,255,255,0.18)); box-shadow:0 18px 45px rgba(0,0,0,0.25); }
+    .profile-photo { width:100%; height:100%; object-fit:cover; border-radius:50%; border:4px solid var(--navy); display:block; }
+    .profile-photo-caption { text-align:center; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-top:-18px; margin-bottom:24px; position:relative; z-index:1; }
+
     .hero-card::before { content:''; position:absolute; top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle,rgba(184,146,74,0.25),transparent 70%); }
     .hero-card-label { font-size:0.7rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:8px; }
     .hero-card-value { font-family:var(--font-serif); font-size:1.5rem; font-weight:300; margin-bottom:32px; color:#fff; }
@@ -124,6 +128,62 @@
     .proj-desc { font-size:0.88rem; color:var(--ink2); line-height:1.7; margin-bottom:20px; transition:color 0.25s; }
     .proj-tags { display:flex; flex-wrap:wrap; gap:6px; }
     .proj-tag { font-size:0.7rem; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; padding:4px 10px; border:1px solid var(--rule); border-radius:2px; color:var(--muted); transition:all 0.25s; }
+
+
+
+    /* BILL GATES MONEY GAME */
+    .game-panel { background:var(--navy); color:#fff; border-radius:8px; padding:32px; box-shadow:0 18px 50px rgba(30,45,69,0.18); position:relative; overflow:hidden; margin-bottom:28px; }
+    .game-panel::before { content:''; position:absolute; top:-120px; right:-90px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle,rgba(184,146,74,0.26),transparent 72%); }
+    .game-top { position:relative; z-index:1; display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:18px; align-items:stretch; }
+    .game-stat { border:1px solid rgba(255,255,255,0.12); border-radius:6px; padding:18px; background:rgba(255,255,255,0.04); }
+    .game-stat-label { font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:8px; }
+    .game-stat-value { font-family:var(--font-serif); font-size:clamp(1.7rem,3vw,2.6rem); line-height:1; font-weight:300; color:#fff; }
+    .game-stat-value.gold { color:var(--gold-l); }
+    .progress-wrap { position:relative; z-index:1; margin-top:24px; }
+    .progress-labels { display:flex; justify-content:space-between; font-size:0.78rem; color:rgba(255,255,255,0.5); margin-bottom:8px; }
+    .progress-bar { width:100%; height:12px; background:rgba(255,255,255,0.10); border-radius:999px; overflow:hidden; }
+    .progress-fill { height:100%; width:0%; background:linear-gradient(90deg,var(--gold),var(--gold-l)); border-radius:999px; transition:width 0.25s ease; }
+    .game-note { position:relative; z-index:1; margin-top:18px; color:rgba(255,255,255,0.55); font-size:0.84rem; line-height:1.7; }
+    .game-controls { display:flex; flex-wrap:wrap; gap:12px; margin:26px 0; align-items:center; }
+    .game-controls input { flex:1 1 280px; min-width:240px; padding:13px 15px; border:1px solid var(--rule); border-radius:4px; background:rgba(255,255,255,0.55); font-family:var(--font-sans); outline:none; color:var(--ink); }
+    .game-controls button { padding:13px 18px; border:none; border-radius:4px; background:var(--navy); color:#fff; font-family:var(--font-sans); font-weight:500; letter-spacing:0.04em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; }
+    .game-controls button:hover { background:var(--gold); transform:translateY(-2px); }
+    .shop-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
+    .shop-card { background:var(--bg); border:1px solid var(--rule); border-radius:8px; padding:20px; transition:all 0.22s; display:flex; flex-direction:column; min-height:230px; }
+    section:nth-child(even) .shop-card { background:var(--bg2); }
+    .shop-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(30,45,69,0.14); border-color:rgba(184,146,74,0.45); }
+    .item-emoji { font-size:2rem; margin-bottom:10px; }
+    .item-name { font-family:var(--font-serif); font-size:1.25rem; line-height:1.25; margin-bottom:8px; }
+    .item-price { color:var(--gold); font-weight:600; margin-bottom:8px; }
+    .item-desc { color:var(--ink2); font-size:0.84rem; line-height:1.55; margin-bottom:10px; flex:1; }
+    .item-result { font-size:0.78rem; line-height:1.5; color:var(--ink2); background:var(--gold-bg); border-left:3px solid var(--gold); padding:10px 12px; border-radius:4px; margin-bottom:14px; }
+    .item-result strong { color:var(--gold); font-weight:600; }
+    .item-count { font-size:0.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px; }
+    .item-actions { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+    .item-actions button { padding:10px 8px; border:1px solid var(--rule); border-radius:4px; background:transparent; cursor:pointer; font-family:var(--font-sans); font-size:0.76rem; color:var(--ink2); transition:all 0.2s; }
+    .item-actions button:hover:not(:disabled) { background:var(--gold); border-color:var(--gold); color:#fff; }
+    .item-actions button:disabled { opacity:0.35; cursor:not-allowed; }
+    .inventory-box { margin-top:30px; border:1px solid var(--rule); border-radius:8px; padding:22px; background:rgba(255,255,255,0.35); }
+    .inventory-title { font-family:var(--font-serif); font-size:1.4rem; margin-bottom:12px; }
+    .inventory-list { color:var(--ink2); font-size:0.9rem; line-height:1.8; min-height:28px; }
+    .result-flash { margin-top:16px; padding:15px 18px; border-radius:8px; background:var(--navy); color:#fff; display:none; line-height:1.55; box-shadow:0 10px 28px rgba(30,45,69,0.14); }
+    .result-flash strong { color:var(--gold-l); }
+    .impact-box { margin-top:22px; border:1px solid var(--rule); border-radius:8px; padding:22px; background:rgba(255,255,255,0.42); }
+    .impact-header { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; flex-wrap:wrap; margin-bottom:14px; }
+    .impact-title { font-family:var(--font-serif); font-size:1.4rem; }
+    .impact-subtitle { color:var(--muted); font-size:0.82rem; line-height:1.6; max-width:620px; }
+    .impact-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:14px 0 18px; }
+    .impact-metric { border:1px solid var(--rule); border-radius:6px; padding:12px; background:rgba(255,255,255,0.35); }
+    .impact-metric-label { font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:5px; }
+    .impact-metric-value { font-family:var(--font-serif); font-size:1.35rem; color:var(--gold); line-height:1; }
+    .impact-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; }
+    .impact-card { border:1px solid var(--rule); border-radius:6px; padding:14px; background:var(--bg); color:var(--ink2); font-size:0.86rem; line-height:1.65; }
+    section:nth-child(even) .impact-card { background:var(--bg2); }
+    .impact-card strong { color:var(--ink); display:block; margin-bottom:4px; }
+    .impact-empty { color:var(--muted); font-size:0.9rem; line-height:1.7; }
+    .game-finish { margin-top:18px; padding:18px; border-radius:8px; border:1px solid rgba(184,146,74,0.35); background:var(--gold-bg); color:var(--ink2); display:none; }
+    .game-finish strong { color:var(--gold); }
+    @media (max-width:900px) { .game-top { grid-template-columns:1fr; } .item-actions { grid-template-columns:1fr; } .impact-metrics { grid-template-columns:1fr; } }
 
     /* SKILLS */
     .skills-wrapper { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
@@ -192,6 +252,7 @@
     <li><a href="#education">Education</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#billgates-game">Game</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -212,6 +273,8 @@
   </div>
   <div class="hero-right">
     <div class="hero-card">
+      <div class="profile-photo-wrap"><img src="assets/profile.jpg" alt="Shuhan Zhao profile photo" class="profile-photo"></div>
+      <div class="profile-photo-caption">Personal Portfolio</div>
       <div class="hero-card-label">Currently at</div>
       <div class="hero-card-value"><em>Rutgers</em> Business School</div>
       <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">B.S. Accounting · Class of 2027</div>
@@ -323,6 +386,67 @@
   </div>
 </section>
 
+
+<!-- BILL GATES MONEY GAME -->
+<section id="billgates-game">
+  <div class="eyebrow reveal">Interactive Game</div>
+  <h2 class="section-title reveal">Spend <em>Bill Gates' Money</em></h2>
+  <div class="game-panel reveal">
+    <div class="game-top">
+      <div class="game-stat">
+        <div class="game-stat-label">Estimated Starting Budget</div>
+        <div class="game-stat-value gold" id="startingBudget">$103.5B</div>
+      </div>
+      <div class="game-stat">
+        <div class="game-stat-label">Money Left</div>
+        <div class="game-stat-value" id="moneyLeft">$103.5B</div>
+      </div>
+      <div class="game-stat">
+        <div class="game-stat-label">Total Spent</div>
+        <div class="game-stat-value" id="moneySpent">$0</div>
+      </div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-labels"><span>Spending progress</span><span id="spentPercent">0%</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+    <p class="game-note">Note: public sources estimate Bill Gates' net worth, but his exact cash balance is not public. This game uses an estimated public net-worth budget for entertainment and classroom practice.</p>
+  </div>
+
+  <div class="game-controls reveal">
+    <input type="number" id="donationAmount" min="1" step="1000000" placeholder="Custom donation amount, e.g. 1000000000">
+    <button id="donateBtn">Donate Custom Amount</button>
+    <button id="spendRestBtn">Spend All Remaining</button>
+    <button id="resetGameBtn">Reset</button>
+  </div>
+
+  <div class="shop-grid reveal" id="shopGrid"></div>
+
+  <div class="inventory-box reveal">
+    <div class="inventory-title">Your Shopping Receipt</div>
+    <div class="inventory-list" id="inventoryList">Nothing purchased yet. Start spending!</div>
+    <div class="result-flash" id="latestResult"><strong>Latest result:</strong> Buy something to see what happens.</div>
+    <div class="game-finish" id="gameFinish"><strong>You spent it all.</strong> Congratulations — Bill Gates' estimated fortune is now $0 in this game.</div>
+  </div>
+
+  <div class="impact-box reveal">
+    <div class="impact-header">
+      <div>
+        <div class="impact-title">Result &amp; Impact Report</div>
+        <div class="impact-subtitle">Every purchase now creates a small story outcome, so the game feels more like a simulation instead of only a shopping list.</div>
+      </div>
+    </div>
+    <div class="impact-metrics">
+      <div class="impact-metric"><div class="impact-metric-label">Lifestyle Level</div><div class="impact-metric-value" id="luxuryScore">0</div></div>
+      <div class="impact-metric"><div class="impact-metric-label">Social Impact</div><div class="impact-metric-value" id="impactScore">0</div></div>
+      <div class="impact-metric"><div class="impact-metric-label">Empire Assets</div><div class="impact-metric-value" id="empireScore">0</div></div>
+    </div>
+    <div class="impact-list" id="effectsList">
+      <div class="impact-empty">No results yet. Buy an item and this section will explain what changed.</div>
+    </div>
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section id="skills">
   <div class="eyebrow reveal">Capabilities</div>
@@ -393,6 +517,217 @@
   <span>Rutgers Business School · <a href="mailto:sz742@scarletmail.rutgers.edu">sz742@scarletmail.rutgers.edu</a></span>
 </footer>
 
+
+
+<script>
+  const STARTING_BUDGET = 103_500_000_000;
+  let balance = STARTING_BUDGET;
+  const purchases = {};
+  let lastResultMessage = '';
+
+  const items = [
+    { emoji:'💻', name:'High-End Gaming Laptop', price:3500, category:'lifestyle', desc:'A powerful laptop for school, gaming, coding, and creative work.', effect:'Your setup becomes faster: coding, video editing, and school projects feel smoother immediately.' },
+    { emoji:'📱', name:'Newest iPhone Pro Max', price:1599, category:'lifestyle', desc:'A top-tier phone with the biggest storage option.', effect:'Your social media quality goes up: sharper videos, better photos, and endless storage for content.' },
+    { emoji:'⌚', name:'Luxury Smartwatch', price:799, category:'lifestyle', desc:'Premium wearable tech for everyday use.', effect:'Your daily routine becomes more organized with fitness tracking, reminders, and quick notifications.' },
+    { emoji:'👜', name:'Hermès Birkin Bag', price:30000, category:'lifestyle', desc:'A famous luxury handbag with very limited availability.', effect:'Your luxury status rises: collectors notice the rare bag and your closet becomes more exclusive.' },
+    { emoji:'💎', name:'Diamond Necklace', price:250000, category:'lifestyle', desc:'A serious jewelry purchase for a billionaire shopping cart.', effect:'You create a red-carpet moment: the necklace becomes the most eye-catching piece in the room.' },
+    { emoji:'🚗', name:'Tesla Model S Plaid', price:90000, category:'lifestyle', desc:'Fast electric sedan with high performance.', effect:'Your commute turns electric and fast, with instant acceleration and lower gas spending.' },
+    { emoji:'🏎️', name:'Bugatti Chiron', price:3_300_000, category:'lifestyle', desc:'One of the most expensive hypercars in the world.', effect:'You become the center of attention wherever you park; car fans stop to take photos.' },
+    { emoji:'🏡', name:'New Jersey Luxury Mansion', price:12_000_000, category:'empire', desc:'A large luxury home close to New York City.', effect:'You gain a private base near New York with space for events, guests, and a home office.' },
+    { emoji:'🏝️', name:'Private Island', price:45_000_000, category:'empire', desc:'A tropical island for the ultimate vacation flex.', effect:'You unlock a private vacation world with beaches, villas, and no random neighbors.' },
+    { emoji:'✈️', name:'Gulfstream Private Jet', price:80_000_000, category:'empire', desc:'A long-range private jet for international travel.', effect:'Travel time drops dramatically: you can fly on your own schedule instead of waiting at airports.' },
+    { emoji:'🛥️', name:'Mega Yacht', price:300_000_000, category:'empire', desc:'A floating palace with crew, suites, and ocean views.', effect:'Your vacations turn into floating luxury parties with crew, ocean views, and private suites.' },
+    { emoji:'🎬', name:'Hollywood Movie Production', price:200_000_000, category:'empire', desc:'Fund an entire blockbuster movie.', effect:'A studio starts filming your blockbuster, creating jobs for actors, editors, designers, and crew.' },
+    { emoji:'🏟️', name:'NBA Team', price:4_000_000_000, category:'empire', desc:'Buy a professional basketball franchise.', effect:'You become a team owner: fans, players, coaches, and the whole city now watch your decisions.' },
+    { emoji:'🏈', name:'NFL Team', price:6_000_000_000, category:'empire', desc:'Own one of the most valuable sports franchises.', effect:'You enter the sports-billionaire club and control one of the most powerful brands in football.' },
+    { emoji:'🚀', name:'Private Space Mission', price:500_000_000, category:'empire', desc:'Send a crewed mission into space.', effect:'A space mission launches, giving scientists new data and giving your name a place in space history.' },
+    { emoji:'🏥', name:'Build a Major Hospital', price:1_200_000_000, category:'impact', desc:'Create a large hospital with modern equipment and facilities.', effect:'A new hospital opens, adding emergency rooms, medical jobs, and better care for thousands of patients.' },
+    { emoji:'🎓', name:'Pay 100,000 Students’ Tuition', price:6_000_000_000, category:'impact', desc:'A giant education donation that changes many lives.', effect:'Thousands of students graduate with less debt and more freedom to choose their careers.' },
+    { emoji:'🌍', name:'Global Health Donation', price:10_000_000_000, category:'impact', desc:'A huge donation for vaccines, health care, and global development.', effect:'Major health programs expand, helping fund vaccines, clinics, and disease-prevention projects worldwide.' }
+  ];
+
+  const formatMoney = (num) => {
+    if (num >= 1_000_000_000) return '$' + (num / 1_000_000_000).toFixed(num % 1_000_000_000 === 0 ? 0 : 1) + 'B';
+    if (num >= 1_000_000) return '$' + (num / 1_000_000).toFixed(num % 1_000_000 === 0 ? 0 : 1) + 'M';
+    if (num >= 1_000) return '$' + Math.round(num).toLocaleString();
+    return '$' + Math.round(num).toLocaleString();
+  };
+
+  function resultFor(item, count) {
+    const prefix = count > 1 ? `After buying ${count} of these, ` : '';
+    const effect = item.effect.charAt(0).toLowerCase() + item.effect.slice(1);
+    return prefix + effect;
+  }
+
+  function showLatestResult(message) {
+    lastResultMessage = message;
+    const latest = document.getElementById('latestResult');
+    if (!latest) return;
+    latest.style.display = 'block';
+    latest.innerHTML = `<strong>Latest result:</strong> ${message}`;
+  }
+
+  function renderShop() {
+    const grid = document.getElementById('shopGrid');
+    if (!grid) return;
+    grid.innerHTML = items.map((item, index) => `
+      <div class="shop-card">
+        <div class="item-emoji">${item.emoji}</div>
+        <div class="item-name">${item.name}</div>
+        <div class="item-price">${formatMoney(item.price)}</div>
+        <p class="item-desc">${item.desc}</p>
+        <div class="item-result"><strong>Effect:</strong> ${item.effect}</div>
+        <div class="item-count">Owned: <span id="count-${index}">${purchases[index] || 0}</span></div>
+        <div class="item-actions">
+          <button onclick="buyItem(${index})" ${balance < item.price ? 'disabled' : ''}>Buy</button>
+          <button onclick="sellItem(${index})" ${(purchases[index] || 0) <= 0 ? 'disabled' : ''}>Sell</button>
+          <button onclick="buyMax(${index})" ${balance < item.price ? 'disabled' : ''}>Max</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function updateScores() {
+    let lifestyle = 0;
+    let impact = 0;
+    let empire = 0;
+
+    Object.entries(purchases).forEach(([idx, count]) => {
+      const item = items[idx];
+      if (!item || count <= 0) return;
+      const points = Math.max(1, Math.round(Math.log10(item.price) * count));
+      if (item.category === 'lifestyle') lifestyle += points;
+      if (item.category === 'impact') impact += points;
+      if (item.category === 'empire') empire += points;
+    });
+
+    if (purchases.customDonation) impact += Math.max(1, Math.round(Math.log10(purchases.customDonation)));
+
+    document.getElementById('luxuryScore').textContent = lifestyle;
+    document.getElementById('impactScore').textContent = impact;
+    document.getElementById('empireScore').textContent = empire;
+  }
+
+  function updateEffects() {
+    const list = document.getElementById('effectsList');
+    if (!list) return;
+
+    const effects = Object.entries(purchases)
+      .filter(([idx, count]) => Number.isInteger(Number(idx)) && count > 0)
+      .map(([idx, count]) => {
+        const item = items[idx];
+        return `
+          <div class="impact-card">
+            <strong>${item.emoji} ${item.name} × ${count}</strong>
+            ${resultFor(item, count)}
+          </div>
+        `;
+      });
+
+    if (purchases.customDonation) {
+      effects.push(`
+        <div class="impact-card">
+          <strong>💝 Custom Donation: ${formatMoney(purchases.customDonation)}</strong>
+          Your donation is directed toward high-impact causes such as education, health care, climate projects, or community programs.
+        </div>
+      `);
+    }
+
+    list.innerHTML = effects.length
+      ? effects.join('')
+      : '<div class="impact-empty">No results yet. Buy an item and this section will explain what changed.</div>';
+
+    updateScores();
+  }
+
+  function updateGame() {
+    const spent = STARTING_BUDGET - balance;
+    const pct = Math.min(100, (spent / STARTING_BUDGET) * 100);
+    document.getElementById('moneyLeft').textContent = formatMoney(balance);
+    document.getElementById('moneySpent').textContent = formatMoney(spent);
+    document.getElementById('spentPercent').textContent = pct.toFixed(2) + '%';
+    document.getElementById('progressFill').style.width = pct + '%';
+
+    const receipt = Object.entries(purchases)
+      .filter(([idx, count]) => Number.isInteger(Number(idx)) && count > 0)
+      .map(([idx, count]) => `${items[idx].emoji} ${items[idx].name} × ${count}`);
+    if (purchases.customDonation) {
+      receipt.push(`💝 Custom Donation: ${formatMoney(purchases.customDonation)}`);
+    }
+    document.getElementById('inventoryList').textContent = receipt.length ? receipt.join('  |  ') : 'Nothing purchased yet. Start spending!';
+    document.getElementById('gameFinish').style.display = balance <= 0 ? 'block' : 'none';
+    updateEffects();
+    renderShop();
+  }
+
+  function buyItem(index) {
+    const item = items[index];
+    if (balance >= item.price) {
+      balance -= item.price;
+      purchases[index] = (purchases[index] || 0) + 1;
+      showLatestResult(`${item.emoji} You bought ${item.name}. ${item.effect}`);
+      updateGame();
+    }
+  }
+
+  function sellItem(index) {
+    const item = items[index];
+    if ((purchases[index] || 0) > 0) {
+      purchases[index] -= 1;
+      balance += item.price;
+      showLatestResult(`${item.emoji} You sold one ${item.name}. The related result was removed from your impact report.`);
+      updateGame();
+    }
+  }
+
+  function buyMax(index) {
+    const item = items[index];
+    const amount = Math.floor(balance / item.price);
+    if (amount > 0) {
+      balance -= amount * item.price;
+      purchases[index] = (purchases[index] || 0) + amount;
+      showLatestResult(`${item.emoji} You bought ${amount.toLocaleString()} × ${item.name}. ${resultFor(item, amount)}`);
+      updateGame();
+    }
+  }
+
+  function donateCustomAmount() {
+    const input = document.getElementById('donationAmount');
+    const amount = Math.floor(Number(input.value));
+    if (!amount || amount <= 0) return alert('Please enter a valid amount.');
+    if (amount > balance) return alert('That is more than the money left. Try a smaller amount.');
+    balance -= amount;
+    purchases.customDonation = (purchases.customDonation || 0) + amount;
+    input.value = '';
+    showLatestResult(`💝 You donated ${formatMoney(amount)}. A major cause gets new funding and your Social Impact score increases.`);
+    updateGame();
+  }
+
+  document.getElementById('donateBtn')?.addEventListener('click', donateCustomAmount);
+  document.getElementById('spendRestBtn')?.addEventListener('click', () => {
+    if (balance > 0) {
+      const amount = balance;
+      purchases.customDonation = (purchases.customDonation || 0) + balance;
+      balance = 0;
+      showLatestResult(`💝 You donated the final ${formatMoney(amount)}. The game is complete and the impact report is now fully funded.`);
+      updateGame();
+    }
+  });
+  document.getElementById('resetGameBtn')?.addEventListener('click', () => {
+    balance = STARTING_BUDGET;
+    lastResultMessage = '';
+    Object.keys(purchases).forEach(k => delete purchases[k]);
+    const latest = document.getElementById('latestResult');
+    if (latest) {
+      latest.style.display = 'none';
+      latest.innerHTML = '<strong>Latest result:</strong> Buy something to see what happens.';
+    }
+    updateGame();
+  });
+
+  renderShop();
+  updateGame();
+</script>
 
 </body>
 </html>
